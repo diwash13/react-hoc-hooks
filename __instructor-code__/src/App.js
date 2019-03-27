@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import hoc from './Hoc';
-import Another from './Another'
-import RenderProps from './RenderProps'
+import Another from './Another';
+import RenderProps from './RenderProps';
 
 class App extends Component {
 
@@ -21,22 +21,26 @@ class App extends Component {
   render() {
     return (
       <>
-        <RenderProps render={(bool, toggle) => (
+        <RenderProps hi={(bool, toggle) => (
           <div>
-            <button onClick={toggle} >Click Me</button>
-            {bool ? <div>hi there</div> : null }
+            <button onClick={toggle}>click me</button>
+            {bool ? <div>hi there</div> : null}
+            {/* {bool && <div>sup</div>} */}
           </div>
         )} />
-        <RenderProps render={(bool, toggle) => (
+        <RenderProps hi={(bool, toggle) => (
           <div onMouseEnter={toggle} onMouseLeave={toggle}>
             {bool ? 'hi' : 'bye'}
           </div>
         )} />
-        <hr/>
-        <hr/>
-        <hr/>
+        <hr />
+        <hr />
+        <hr />
+
         <div>
-          <Another />
+          <Another color='green' />
+          <Another color='red' />
+          <Another color='blue' />
         </div>
         <h1>Joe's cool app</h1>
         <button onClick={this.handleClick}>
@@ -45,7 +49,7 @@ class App extends Component {
         <button onClick={this.props.toggle}>Toggle image</button>
         {
           this.props.bool ? (
-            <img style={{ width: '200px' }} src="https://g77v3827gg2notadhhw9pew7-wpengine.netdna-ssl.com/wp-content/uploads/2017/09/puppy-vomiting_canna-pet-1024x682.jpg" alt="" />
+            <img style={{ width: '50px' }} src="http://ihypoallergeniccats.com/wp-content/uploads/2016/03/hypoallergenic-cats-facts.jpg" alt="" />
           ) : null
         }
       </>
